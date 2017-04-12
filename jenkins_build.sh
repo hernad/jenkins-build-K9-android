@@ -10,7 +10,7 @@ docker rm -f android-dev
 GITHUB_USER=hernad
 ANDROID_PROJECT=K9-android
 
-docker run -ti \
+docker run -t \
        	-v $(pwd)/dot.android:/root/.android \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
