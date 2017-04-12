@@ -2,7 +2,7 @@
 
 if ! docker images android-dev | grep -q android-dev
 then
-  docker build . -t android-dev .
+  docker build -t android-dev .
 fi
 
 docker rm -f android-dev
