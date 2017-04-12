@@ -3,7 +3,7 @@
 
 GITHUB_USER=${1:-hernad}
 ANDROID_PROJECT=K9-android
-APK_DIR=/build/$ANDROID_PROJECT/k9mail/build/outputs/apk
+APK_DIR=/build/$GITHUB_USER/$ANDROID_PROJECT/k9mail/build/outputs/apk
 
 
 mkdir /build/$GITHUB_USER
@@ -20,6 +20,6 @@ git log -1
 tools/build_only_bosanski.sh DEBUG
 cp -av $APK_DIR/* /apk/
 
-#tools/build_only_bosanski.sh
-#cp -av $APK_DIR/* /apk/
+tools/build_only_bosanski.sh
+cp -av $APK_DIR/* /apk/
 
