@@ -11,7 +11,7 @@ git clone https://github.com/$GITHUB_USER/$ANDROID_PROJECT.git
 
 
 cd $ANDROID_PROJECT
-git checkout apps_modular -f
+git checkout android -f
 git pull
 git log -1
 
