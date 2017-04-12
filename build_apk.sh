@@ -21,5 +21,5 @@ tools/build_only_bosanski.sh DEBUG
 cp -av $APK_DIR/* /apk/
 
 tools/build_only_bosanski.sh
-cp -av $APK_DIR/* /apk/
+cp -av $APK_DIR/* /apk/  || echo "release build nam ovdje jos nije bitan"
 
