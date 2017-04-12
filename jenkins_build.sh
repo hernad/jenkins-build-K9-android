@@ -5,17 +5,20 @@ then
   docker build -t android-dev .
 fi
 
-docker rm -f android-dev
 
 GITHUB_USER=hernad
 ANDROID_PROJECT=K9-android
+
+docker rm -f android-build-$ANDROID_PROJECT
+
+echo === starting docker build $ANDROID_PROJECT in container android-build-$ANDROID_PROJECT ========
 
 docker run -t \
        	-v $(pwd)/dot.android:/root/.android \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
 	-v $(pwd)/build_assembly.sh:/build_apk.sh \
-       	--name android-dev android-dev /build_apk.sh
+       	--name android-build-$ANDROID_PROJECT android-dev /build_apk.sh
 
 
 
