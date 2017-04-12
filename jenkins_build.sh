@@ -20,7 +20,7 @@ docker run -t \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
 	-v $(pwd)/build_apk.sh:/build_apk.sh \
-       	--name $CONTAINER_NAME /build_apk.sh $GITHUB_USER
+       	--name $CONTAINER_NAME android-dev /build_apk.sh $GITHUB_USER
 
 
 
