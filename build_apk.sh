@@ -16,7 +16,7 @@ git pull
 git log -1
 
 tools/build_only_bosanski.sh DEBUG
+cp -av $APK_DIR/* /apk/
 tools/build_only_bosanski.sh
-
 cp -av $APK_DIR/* /apk/
 
