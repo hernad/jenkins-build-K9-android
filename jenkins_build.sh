@@ -15,7 +15,7 @@ echo === starting docker build $ANDROID_PROJECT in container android-build-$ANDR
 
 docker run -t \
        	-v $(pwd)/dot.android:/root/.android \
-       	-v $(pwd)/dot.m2:/root/.m2 \
+       	-v $(pwd)/dot.gradle:/root/.gradle \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
 	-v $(pwd)/build_apk.sh:/build_apk.sh \
