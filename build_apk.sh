@@ -3,7 +3,7 @@
 
 GITHUB_USER=hernad
 ANDROID_PROJECT=K9-android
-APK_DIR=/build/$ANDROID_PROJECT/vector/build/outputs/apk
+APK_DIR=/build/$ANDROID_PROJECT/k9mail/build/outputs/apk
 
 
 cd /build
@@ -15,8 +15,8 @@ git checkout apps_modular -f
 git pull
 git log -1
 
-./gradlew assembleDebug
-./gradlew assembleRelease
+tools/build_only_bosanski.sh DEBUG
+tools/build_only_bosanski.sh
 
-cp -av $APK_DIR /apk
+cp -av $APK_DIR/* /apk/
 
