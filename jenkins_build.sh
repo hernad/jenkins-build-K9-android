@@ -5,8 +5,8 @@ then
   docker build -t android-dev .
 fi
 
+GITHUB_USER=${1:-hernad}
 
-GITHUB_USER=hernad
 ANDROID_PROJECT=K9-android
 
 docker rm -f android-build-$ANDROID_PROJECT
