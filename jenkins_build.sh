@@ -17,7 +17,7 @@ docker run -t \
        	-v $(pwd)/dot.android:/root/.android \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
-	-v $(pwd)/build_assembly.sh:/build_apk.sh \
+	-v $(pwd)/build_apk.sh:/build_apk.sh \
        	--name android-build-$ANDROID_PROJECT android-dev /build_apk.sh
 
 
