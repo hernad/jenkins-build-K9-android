@@ -39,4 +39,4 @@ docker run -t \
 
 
 
-cp -av apk/*.apk .
+cp -av apk/release/k9mail-signed.apk .
