@@ -3,8 +3,7 @@
 set -x
 
 docker images
-docker rmi -f android-dev
-
+#docker rmi -f android-dev
 
 
 if ! docker images android-dev | grep -q android-dev
