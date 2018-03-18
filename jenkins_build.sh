@@ -1,6 +1,9 @@
 #!/bin/bash
 
+set -x
+
 docker images
+docker rmi -f android-dev
 #if ! docker images android-dev | grep -q android-dev
 #then
   docker build -t android-dev .
