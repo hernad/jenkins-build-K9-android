@@ -6,14 +6,11 @@ docker images
 docker rmi -f android-dev
 
 
-#[docker@greenbox-5 K9-android]$ docker build -t android-dev .
-#Error checking context: 'can't stat '/home/docker/workspace/K9-android/dot.gradle/daemon/4.5.1''.
-#sudo rm -rf dot.gradle
 
-#if ! docker images android-dev | grep -q android-dev
-#then
+if ! docker images android-dev | grep -q android-dev
+then
   docker build -t android-dev .
-#fi
+fi
 
 GITHUB_USER=${1:-hernad}
 
