@@ -18,8 +18,13 @@ git pull
 git log -1
 
 tools/build_only_bosanski.sh DEBUG
-cp -av $APK_DIR/* /apk/
+APK_DIR_REL=k9mail/build/outputs/apk
+
+find $APK_DIR_REL
+
+cp -av $APK_DIR_REL/* /apk/
 
 tools/build_only_bosanski.sh
-cp -av $APK_DIR/* /apk/
+tools/build_sign_apk.sh
+cp -av $APK_DIR_REL/* /apk/
 
