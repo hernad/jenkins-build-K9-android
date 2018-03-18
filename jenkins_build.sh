@@ -20,12 +20,14 @@ docker rm -f $CONTAINER_NAME
 
 echo === starting docker build $ANDROID_PROJECT in container $CONTAINER_NAME ========
 
+HOST_KEYSTORE=${HOME}/bringout-android.keystore
+
 docker run -t \
        	-v $(pwd)/dot.android:/root/.android \
        	-v $(pwd)/dot.gradle:/root/.gradle \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
-		-v $(HOME)/bringout-android.keystore:/bringout-android.keystore \
+		-v ${HOST_KEYSTORE}:/bringout-android.keystore \
 	    -v $(pwd)/build_apk.sh:/build_apk.sh \
        	--name $CONTAINER_NAME android-dev /build_apk.sh $GITHUB_USER
 
