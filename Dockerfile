@@ -26,7 +26,7 @@ ENV ANDROID_SDK_VER 2.5.2.2
 # Download Android SDK
 RUN apt-get -y install wget \
   && cd /usr/local \
-  && wget http://dl.google.com/android/android-sdk_r2${ANDROID_SDK_VER}-linux.tgz \
+  && wget http://dl.google.com/android/android-sdk_r${ANDROID_SDK_VER}-linux.tgz \
   && tar zxvf android-sdk_r${ANDROID_SDK_VER}-linux.tgz \
   && rm -rf /usr/local/android-sdk_r${ANDROID_SDK_VER}-linux.tgz
 
