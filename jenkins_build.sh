@@ -25,7 +25,8 @@ docker run -t \
        	-v $(pwd)/dot.gradle:/root/.gradle \
        	-v $(pwd)/build:/build \
        	-v $(pwd)/apk:/apk \
-	-v $(pwd)/build_apk.sh:/build_apk.sh \
+		-v $(HOME)/bringout-android.keystore:/bringout-android.keystore \
+	    -v $(pwd)/build_apk.sh:/build_apk.sh \
        	--name $CONTAINER_NAME android-dev /build_apk.sh $GITHUB_USER
 
 
