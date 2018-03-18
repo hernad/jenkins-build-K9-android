@@ -21,18 +21,19 @@ RUN apt-get install -y openjdk-8-jdk
 
 # RUN mkdir -p /user/local/android-sdk-linux
 
+ENV ANDROID_SDK_VER 2.5.2.2
 
 # Download Android SDK
 RUN apt-get -y install wget \
   && cd /usr/local \
-  && wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz \
-  && tar zxvf android-sdk_r24.4.1-linux.tgz \
-  && rm -rf /usr/local/android-sdk_r24.4.1-linux.tgz
+  && wget http://dl.google.com/android/android-sdk_r2${ANDROID_SDK_VER}-linux.tgz \
+  && tar zxvf android-sdk_r${ANDROID_SDK_VER}-linux.tgz \
+  && rm -rf /usr/local/android-sdk_r${ANDROID_SDK_VER}-linux.tgz
 
 RUN ls /usr/local
 
-RUN cd /usr/local/android-sdk-linux && rm -r tools && wget --output-document=tools_r25.2.2-linux.zip --quiet https://dl.google.com/android/repository/tools_r25.2.2-linux.zip && \
-  unzip tools_r25.2.2-linux.zip
+RUN cd /usr/local/android-sdk-linux && rm -r tools && wget --output-document=tools_r${ANDROID_SDK_VER}-linux.zip --quiet https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VER}-linux.zip && \
+  unzip tools_r${ANDROID_SDK_VER}-linux.zip
 
 # # Download Android SDK
 # RUN apt-get -y install wget \
@@ -49,7 +50,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 
 # Update of Android SDK
-RUN echo y | android update sdk --no-ui --all --filter "android-24,build-tools-24.0.2,android-25,build-tools-25.0.0,build-tools-25.0.2" \
+RUN echo y | android update sdk --no-ui --all --filter "android-25,build-tools-25.0.0,build-tools-${ANDROID_SDK_VER}" \
   && echo y | android update sdk --no-ui --all --filter "extra-android-support,extra-google-m2repository,extra-android-m2repository,extra-google-google_play_services" \
   && echo y | android update sdk -a -u -t "sys-img-armeabi-v7a-android-24" \
   && echo y | android update sdk --no-ui  --all --filter "platform-tools"
