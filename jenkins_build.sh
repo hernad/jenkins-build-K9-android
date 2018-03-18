@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if ! docker images android-dev | grep -q android-dev
-then
+#if ! docker images android-dev | grep -q android-dev
+#then
   docker build -t android-dev .
-fi
+#fi
 
 GITHUB_USER=${1:-hernad}
 
