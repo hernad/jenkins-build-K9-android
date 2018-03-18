@@ -22,7 +22,12 @@ echo === starting docker build $ANDROID_PROJECT in container $CONTAINER_NAME ===
 
 HOST_KEYSTORE=${HOME}/bringout-android.keystore
 
+if [ -z "${BRINGOUT_KEYSTORE_PASSWORD}" ] ; then
+   echo mora se definisati keystore password BRINGOUT_KEYSTORE_PASSWORD
+   exit 1
+fi
 docker run -t \
+        -e BRINGOUT_KEYSTORE_PASSWORD=$BRINGOUT_KEYSTORE_PASSWORD
        	-v $(pwd)/dot.android:/root/.android \
        	-v $(pwd)/dot.gradle:/root/.gradle \
        	-v $(pwd)/build:/build \

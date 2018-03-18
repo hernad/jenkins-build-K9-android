@@ -31,6 +31,7 @@ fi
 cd $BUILD_ROOT
 tools/build_only_bosanski.sh
 find $APK_DIR_REL
+cp /bringout-android.keystore ${APK_DIR_REL}/release
 echo $BRINGOUT_KEYSTORE_PASSWORD | tools/bringout_sign_apk.sh
 
 
