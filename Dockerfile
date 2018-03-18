@@ -19,11 +19,11 @@ RUN apt-get -y install lib32stdc++6 lib32z1
 RUN apt-get -y install build-essential ruby ruby-dev
 
 # Install Java8
-RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y openjdk-8-jdk wget
 
 # RUN mkdir -p /user/local/android-sdk-linux
 
-ENV ANDROID_TOOLS_SDK_VERSION 2.5.2.2
+
 ENV ANDROID_SDK_VERSION 3859397
 
 # Download Android SDK
@@ -85,14 +85,14 @@ RUN /opt/license_accepter.sh $ANDROID_HOME
 
 
 # Create emulator
-RUN echo "no" | android create avd \
-                --force \
-                --device "Nexus 5" \
-                --name test \
-                --target android-24 \
-                --abi armeabi-v7a \
-                --skin WVGA800 \
-                --sdcard 512M
+#RUN echo "no" | android create avd \
+#                --force \
+#                --device "Nexus 5" \
+#                --name test \
+#                --target android-24 \
+#                --abi armeabi-v7a \
+#                --skin WVGA800 \
+#                --sdcard 512M
 
 RUN apt-get install git vim -y
 
