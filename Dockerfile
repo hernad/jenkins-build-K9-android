@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Yasutaka Kawamoto
+MAINTAINER hernad
 
 # update
 RUN apt-get update
