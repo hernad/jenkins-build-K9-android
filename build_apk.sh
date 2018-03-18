@@ -20,9 +20,10 @@ git checkout android -f
 git pull
 git log -1
 
+APK_DIR_REL=k9mail/build/outputs/apk
+
 if [ x$BUILD_DEBUG_APK == xyes ] ; then
- tools/build_only_bosanski.sh DEBUG
- APK_DIR_REL=k9mail/build/outputs/apk
+ tools/build_only_bosanski.sh DEBUG 
  find $APK_DIR_REL
  cp -av $APK_DIR_REL/* /apk/
 fi
@@ -30,7 +31,8 @@ fi
 cd $BUILD_ROOT
 tools/build_only_bosanski.sh
 find $APK_DIR_REL
-tools/bringout_sign_apk.sh
+echo $BRINGOUT_KEYSTORE_PASSWORD | tools/bringout_sign_apk.sh
+
 
 cd $BUILD_ROOT
 cp -av $APK_DIR_REL/* /apk/
